@@ -26,7 +26,7 @@ def get_player_id(first, last):
 shot_json = shotchartdetail.ShotChartDetail(
     team_id=0,
     player_id=get_player_id("Stephen", "Curry"),
-    context_measure_simple='FGA',
+    context_measure_simple='PTS',
     season_nullable='2020-21',
     season_type_all_star='Regular Season')
 
@@ -35,6 +35,8 @@ shot_data = json.loads(shot_json.get_json())
 
 
 # Get the relevant data from our dictionary
-relevant_data = shot_data['resultSets'][0]["rowSet"]
-shot = relevant_data[0]
-print("LOC_X", shot[17])
+headers = shot_data['resultSets'][0]["headers"]
+data = shot_data['resultSets'][0]["rowSet"]
+for row in data:
+    data_point = dict(zip(headers[14], row[14], headers[16:19], row[16:19]))
+    print(data_point)
