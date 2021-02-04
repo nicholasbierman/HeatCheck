@@ -38,5 +38,5 @@ shot_data = json.loads(shot_json.get_json())
 headers = shot_data['resultSets'][0]["headers"]
 data = shot_data['resultSets'][0]["rowSet"]
 for row in data:
-    data_point = dict(zip(headers[14], row[14], headers[16:19], row[16:19]))
-    print(data_point)
+    data_point = dict(zip(headers[16:19], row[16:19]))
+    print(shot)
