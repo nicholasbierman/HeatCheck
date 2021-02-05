@@ -2,9 +2,9 @@ import React from 'react';
 
 export const Court = () => {
     return (
-        <svg stroke="orange" viewBox="0 0 500 470">
+        <svg stroke="gray" fill="none" stroke="gray" viewBox="0 0 500 470">
             <g class="court">
-                <polyline class="baseline-and-corner-three" fill="none" stroke="#999999" strokeLinecap="square" strokeLinejoin="bevel" strokeMiterlimit="10" viewBox="0 0 440 140" points="470,140 470,0 30,0 30,140">
+                <polyline class="baseline-and-corner-three" fill="none" viewBox="0 0 440 140" points="470,140 470,0 30,0 30,140">
                 </polyline>
                 <rect width="160" height="190" x="170"></rect>
                 <line x1="310" y1="190" x2="310" y2="0"></line>
@@ -26,7 +26,7 @@ export const Court = () => {
             </g>
             <g class="hoop">
                 <line class="backboard" x1="280" y1="40" x2="220" y2="40"></line> /* 4 feet from baseline, measures 6' horizontally */
-                <path class="rim" d="M250,55 c4,0,7-3,7-7c0-4-4-7-7-7c-4,0-7.197,3-7,7 C243,52,246,55,250,55z"></path>
+                <path stroke="orange" class="rim" d="M250,55 c4,0,7-3,7-7c0-4-4-7-7-7c-4,0-7.197,3-7,7 C243,52,246,55,250,55z"></path>
             </g>
         </svg>
     )
