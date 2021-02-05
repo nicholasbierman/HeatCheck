@@ -2,9 +2,7 @@ import React from 'react';
 
 export const Court = () => {
     return (
-        <svg stroke="orange" fill="purple" viewBox="0 0 500 470">
-            <g fill="white" stroke="green" strokeWidth="5">
-            </g>
+        <svg stroke="orange" viewBox="0 0 500 470">
             <g class="court">
                 <polyline fill="none" stroke="#999999" strokeLinecap="square" strokeLinejoin="bevel" strokeMiterlimit="10" viewBox="0 0 440 140" points="470,140 470,0 30,0 30,147">
                 </polyline>
@@ -14,7 +12,8 @@ export const Court = () => {
                 <path class="restricted-area" d="M211,53 c3,22,23,37,44,34c18-2,32-16,34-34"></path>
                 <path class="key-bottom" d="M190,190 c0,33,27,60,60,60c33,0,60-27,60-60"></path>
                 <path class="key-top" fill="none" stroke-dasharray="12.92 10.24" d="M310,190c0-33-27-60-60-60c-33,0-60,27-60,60"></path>
-                <line x1="340" y1="71" x2="330" y2="71"></line>
+                <line x1="335" y1="71" x2="330" y2="71"></line>
+                <line x1="335" y1="82.495" x2="330" y2="82.495"></line>
             </g>
         </svg>
     )
