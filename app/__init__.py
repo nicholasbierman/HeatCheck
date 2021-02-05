@@ -6,11 +6,13 @@ from flask_wtf.csrf import CSRFProtect, generate_csrf
 from .api.player_shot_routes import shot_routes
 from .models import db
 from .config import Config
+from .seeds import seed_commands
 
 app = Flask(__name__)
 
 
 # Tell flask about our seed commands
+app.cli.add_command(seed_commands)
 
 app.config.from_object(Config)
 app.register_blueprint(shot_routes, url_prefix="/api/shots")
