@@ -5,7 +5,7 @@ const setPlayerShots = (shots) => ({
     payload: shots
 })
 
-export const getShotsByPlayerId = (id) => async dispatch => {
+export const getShotsByPlayerId = (id) => async (dispatch) => {
     console.log('HITTING THUNK')
     const response = await fetch(`/api/shots/${id}`);
     const data = await response.json();

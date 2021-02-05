@@ -1,8 +1,13 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux'
+import { getShotsByPlayerId } from "../../store/shots";
 
 
 export const Court = () => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getShotsByPlayerId(2))
+    }, [])
     return (
         <div>
         <svg stroke="gray" fill="none" viewBox="0 0 500 470">
