@@ -24,6 +24,9 @@ export const Court = () => {
                 /* 3 point line has parallel lines 3' from sidelines and an arc of 23'4" from the middle of the basket */
                 <path fill="none" class="three-point-line-center" d="M30,140 c50,122,190,180,310,130c60-24.9,106-71,130-130"></path>
             </g>
+            <g class="hoop">
+                <line class="backboard" x1="280" y1="40" x2="220" y2="40"></line> /* 4 feet from baseline, measures 6' horizontally */
+            </g>
         </svg>
     )
 }
