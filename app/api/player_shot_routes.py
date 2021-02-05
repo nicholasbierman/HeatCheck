@@ -30,7 +30,7 @@ def get_team_id(team):
     return - 1
 
 
-#@shot_routes.route('/<int:player_id>')
+@shot_routes.route('/<int:player_id>')
 def get_shots_by_player_id(player_id):
     print("HITTING BACKEND ROUTE")
     shot_json = shotchartdetail.ShotChartDetail(
@@ -52,6 +52,3 @@ def get_shots_by_player_id(player_id):
         print(data_point)
     print(shots)
     return shots
-
-
-print(get_shots_by_player_id(1))

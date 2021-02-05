@@ -10,22 +10,6 @@ class Player(db.Model):
     last_name = db.Column(db.String(255))
     full_name = db.Column(db.String(255))
 
-    @property
-    def nba_player_id(self):
-        return self.nba_player_id
-
-    @property
-    def first_name(self):
-        return self.first_name
-
-    @property
-    def last_name(self):
-        return self.last_name
-
-    @property
-    def full_name(self):
-        return self.full_name
-
     def to_dict(self):
         return {
             "id": self.id,
