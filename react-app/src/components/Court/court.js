@@ -11,9 +11,10 @@ export const Court = () => {
                 <rect width="160" height="190" x="170"></rect>
                 <line x1="310" y1="190" x2="310" y2="0"></line>
                 <line x1="190" y1="190" x2="190" y2="0"></line>
-                <path d="M211,53 c3,22,23,37,44,34c18-2,32-16,34-34"></path>
-                <path d="M190,190 c0,33,27,60,60,60c33,0,60-27,60-60"></path>
-                <path fill="none" stroke-dasharray="12.92 10.24" d="M310,190c0-33-27-60-60-60c-33,0-60,27-60,60"></path>
+                <path class="restricted-area" d="M211,53 c3,22,23,37,44,34c18-2,32-16,34-34"></path>
+                <path class="key-bottom" d="M190,190 c0,33,27,60,60,60c33,0,60-27,60-60"></path>
+                <path class="key-top" fill="none" stroke-dasharray="12.92 10.24" d="M310,190c0-33-27-60-60-60c-33,0-60,27-60,60"></path>
+                <line x1="340" y1="71" x2="330" y2="71"></line>
             </g>
         </svg>
     )
