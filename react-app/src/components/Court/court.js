@@ -4,7 +4,7 @@ export const Court = () => {
     return (
         <svg stroke="orange" viewBox="0 0 500 470">
             <g class="court">
-                <polyline class="backboard-and-corner-three" fill="none" stroke="#999999" strokeLinecap="square" strokeLinejoin="bevel" strokeMiterlimit="10" viewBox="0 0 440 140" points="470,140 470,0 30,0 30,147">
+                <polyline class="backboard-and-corner-three" fill="none" stroke="#999999" strokeLinecap="square" strokeLinejoin="bevel" strokeMiterlimit="10" viewBox="0 0 440 140" points="470,140 470,0 30,0 30,140">
                 </polyline>
                 <rect width="160" height="190" x="170"></rect>
                 <line x1="310" y1="190" x2="310" y2="0"></line>
@@ -19,6 +19,10 @@ export const Court = () => {
                 <line class="right-lane-hash"x1="335" y1="140" x2="330" y2="140"></line> /* 14 feet from baseline */
                 <line class="left-lane-hash" x1="165" y1="70" x2="170" y2="70"></line> /* 7 feet from baseline, 6 inches wide */
                 <line class="left-lane-hash" x1="165" y1="80" x2="170" y2="80"></line> /* 8 feet from baseline, 6 inches wide */
+                <line class="left-lane-hash" x1="165" y1="110" x2="170" y2="110"></line> /* 11 feet from baseline, 6 inches wide */
+                <line class="left-lane-hash" x1="165" y1="140" x2="170" y2="140"></line> /* 14 feet from baseline, 6 inches wide */
+                /* 3 point line has parallel lines 3' from sidelines and an arc of 23'4" from the middle of the basket */
+                <path fill="none" class="three-point-line-center" d="M30,140 c50,122,190,180,310,130c60-24.9,106-71,130-130"></path>
             </g>
         </svg>
     )
