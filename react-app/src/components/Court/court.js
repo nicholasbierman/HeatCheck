@@ -14,6 +14,7 @@ export const Court = () => {
                 <path class="key-top" fill="none" stroke-dasharray="12.92 10.24" d="M310,190c0-33-27-60-60-60c-33,0-60,27-60,60"></path>
                 <line x1="335" y1="70" x2="330" y2="70"></line>
                 <line x1="335" y1="80" x2="330" y2="80"></line>
+                <line x1="335" y1="114" x2="330" y2="114"></line>
             </g>
         </svg>
     )
