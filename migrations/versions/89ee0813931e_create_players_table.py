@@ -25,7 +25,7 @@ def upgrade():
     op.add_column('players', sa.Column(
         'last_name', sa.String(length=255), nullable=True))
     op.add_column('players', sa.Column(
-        'nba_player_id', sa.Integer(), nullable=True))
+        'nba_player_id', sa.Integer(), nullable=True, unique=True))
     # ### end Alembic commands ###
 
 
