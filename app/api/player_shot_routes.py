@@ -34,7 +34,7 @@ def get_team_id(team):
 @shot_routes.route('/<int:player_id>')
 def get_shots_by_player_id(player_id):
     shots = Shot.query.all()
-    return {"shots": shot.to_dict() for shot in shots}
+    return {"shots": [shot.to_dict() for shot in shots]}
 
 
 

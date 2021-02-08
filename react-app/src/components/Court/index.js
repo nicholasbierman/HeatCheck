@@ -40,7 +40,11 @@ export const Court = () => {
                 <path stroke="orange" className="rim" d="M250,55 c4,0,7-3,7-7c0-4-4-7-7-7c-4,0-7.197,3-7,7 C243,52,246,55,250,55z"></path>
             </g>
             <g>
-                    <ShotMark x={ shots.x } y={ shots.y } /> 
+                    { shots && shots.map(shot => {
+                        return (
+                            <ShotMark x={ shot.x } y={ shot.y }/>
+                    )
+                })}
             </g>
             </svg>
         </div>
