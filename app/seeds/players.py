@@ -14,5 +14,5 @@ def seed_players():
 
 
 def undo_players():
-    db.session.execute('TRUNCATE players')
+    db.session.execute('TRUNCATE players CASCADE')
     db.session.commit()
