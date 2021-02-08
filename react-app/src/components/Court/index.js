@@ -6,7 +6,7 @@ import { getShotsByPlayerId } from "../../store/shots";
 export const Court = () => {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getShotsByPlayerId(2))
+        dispatch(getShotsByPlayerId(201939))
     }, [])
     return (
         <div>

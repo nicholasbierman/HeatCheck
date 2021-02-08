@@ -15,9 +15,9 @@ app = Flask(__name__)
 app.cli.add_command(seed_commands)
 
 app.config.from_object(Config)
-app.register_blueprint(shot_routes, url_prefix="/api/shots")
 db.init_app(app)
 Migrate(app, db)
+app.register_blueprint(shot_routes, url_prefix="/api/shots")
 
 # Application Security
 CORS(app)

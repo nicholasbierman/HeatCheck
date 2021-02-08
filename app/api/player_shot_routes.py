@@ -1,5 +1,6 @@
 from flask import Blueprint, request
 from nba_api.stats.endpoints import shotchartdetail
+from app.models import Shot
 import json
 import requests
 
@@ -32,23 +33,28 @@ def get_team_id(team):
 
 @shot_routes.route('/<int:player_id>')
 def get_shots_by_player_id(player_id):
-    print("HITTING BACKEND ROUTE")
-    shot_json = shotchartdetail.ShotChartDetail(
-        team_id=0,
-        player_id=201939,
-        context_measure_simple='PTS',
-        season_nullable='2020-21',
-        season_type_all_star='Regular Season')
-    print(shot_json)
-    # Load data into a Python dictionary
-    shot_data = json.loads(shot_json.get_json())
-    # Get the relevant data from our dictionary
-    shots = []
-    headers = shot_data['resultSets'][0]["headers"]
-    data = shot_data['resultSets'][0]["rowSet"]
-    for row in data:
-        data_point = dict(zip(headers[16:19], row[16:19]))
-        shots.append(data_point)
-        print(data_point)
-    print(shots)
-    return shots
+    shots = Shot.query.all()
+    return {"shots": shot.to_dict() for shot in shots}
+
+
+
+    # print("HITTING BACKEND ROUTE")
+    # shot_json = shotchartdetail.ShotChartDetail(
+    #     team_id=0,
+    #     player_id=201939,
+    #     context_measure_simple='PTS',
+    #     season_nullable='2020-21',
+    #     season_type_all_star='Regular Season')
+    # print(shot_json)
+    # # Load data into a Python dictionary
+    # shot_data = json.loads(shot_json.get_json())
+    # # Get the relevant data from our dictionary
+    # shots = []
+    # headers = shot_data['resultSets'][0]["headers"]
+    # data = shot_data['resultSets'][0]["rowSet"]
+    # for row in data:
+    #     data_point = dict(zip(headers[16:19], row[16:19]))
+    #     shots.append(data_point)
+    #     print(data_point)
+    # print(shots)
+    # return shots
