@@ -1,5 +1,4 @@
 from flask import Blueprint, request
-from nba_api.stats.endpoints import shotchartdetail
 from app.models import Shot
 import json
 import requests
