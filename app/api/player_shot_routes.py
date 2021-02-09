@@ -20,7 +20,7 @@ def get_team_id(team):
     return - 1
 
 
-@shot_routes.route('/<int:player_id>')
-def get_shots_by_player_id(player_id):
-    shots = Shot.query.all()
+@shot_routes.route('/<int:id>')
+def get_shots_by_player_id(id):
+    shots = Shot.query.filter(Shot.nba_player_id == id)
     return {"shots": [shot.to_dict() for shot in shots]}
