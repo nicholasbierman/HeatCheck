@@ -1,4 +1,5 @@
 from flask import Blueprint, request
+from app.models import Shot
 import json
 import requests
 
@@ -21,5 +22,5 @@ def get_team_id(team):
 
 @shot_routes.route('/<int:player_id>')
 def get_shots_by_player_id(player_id):
-    
-    return {"shots": list(shots)}
+    shots = Shot.query.all()
+    return {"shots": [shot.to_dict() for shot in shots]}
