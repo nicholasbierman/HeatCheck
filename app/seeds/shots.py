@@ -24,7 +24,6 @@ def seed_shots():
     shot5 = Shot(nba_player_id=201939, x=500, y=0)
     shot6 = Shot(nba_player_id=201939, x=0, y=470)
     shot7 = Shot(nba_player_id=201939, x=0, y=460)
-    shot8 = Shot(nba_player_id=201935, x=shots[0][17], y=shots[0][18])
     db.session.add(shot1)
     db.session.add(shot2)
     db.session.add(shot3)
