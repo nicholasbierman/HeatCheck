@@ -1,6 +1,5 @@
 from app.models import db, Shot
 
-
 def seed_shots():
     shot1 = Shot(nba_player_id=201939, x=100, y=100, shot_zone="Center")
     shot2 = Shot(nba_player_id=201939, x=250, y=150, shot_zone="Left Corner 3")
