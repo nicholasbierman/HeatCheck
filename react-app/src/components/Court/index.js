@@ -9,7 +9,7 @@ export const Court = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getShotsByPlayerId(201939))
-    }, [shots, dispatch])
+    }, [dispatch])
     return (
         <div>
         <svg stroke="gray" fill="none" viewBox="0 0 500 470">
