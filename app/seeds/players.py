@@ -8,8 +8,10 @@ def seed_players():
         last_name="Curry",
         full_name="Stephen Curry"
     )
+    harden = Player(nba_player_id=201935, first_name="James", last_name="Harden", full_name="James Harden")
 
     db.session.add(curry)
+    db.session.add(harden)
     db.session.commit()
 
 
