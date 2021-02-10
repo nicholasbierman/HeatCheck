@@ -2,13 +2,16 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { getShotsByPlayerId } from "../../store/shots";
 import ShotMark from '../ShotMark/shotMark'
+import { getLeagueAverages } from '../../store/leagueAverages';
 
 
 export const Court = () => {
-    const shots = useSelector(state => state.shots.shots)
+    const shots = useSelector(state => state.shots.shots);
+    const leagueAverages = useSelector(state => state.leagueAverages.leagueAverages)
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getShotsByPlayerId(201939))
+        dispatch(getLeagueAverages())
     }, [dispatch])
     return (
         <div>
