@@ -20,7 +20,7 @@ db.init_app(app)
 Migrate(app, db)
 app.register_blueprint(shot_routes, url_prefix="/api/shots")
 app.register_blueprint(league_average_routes,
-                       url_prefix="/api/league-averages")
+                       url_prefix="/api/league_averages")
 
 # Application Security
 CORS(app)
