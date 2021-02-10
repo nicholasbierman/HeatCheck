@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 from .api.player_shot_routes import shot_routes
+from .api.league_averages_routes import league_average_routes
 from .models import db
 from .config import Config
 from .seeds import seed_commands
@@ -18,6 +19,8 @@ app.config.from_object(Config)
 db.init_app(app)
 Migrate(app, db)
 app.register_blueprint(shot_routes, url_prefix="/api/shots")
+app.register_blueprint(league_average_routes,
+                       url_prefix="/api/league_averages")
 
 # Application Security
 CORS(app)

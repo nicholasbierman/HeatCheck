@@ -6,7 +6,6 @@ const setPlayerShots = (shots) => ({
 })
 
 export const getShotsByPlayerId = (id) => async (dispatch) => {
-    console.log('HITTING THUNK')
     const response = await fetch(`/api/shots/${id}`);
     const data = await response.json();
     dispatch(setPlayerShots(data.shots))
