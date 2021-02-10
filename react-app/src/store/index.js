@@ -1,9 +1,11 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import shots from './shots'
+import leagueAverages from './leagueAverages'
 
 const rootReducer = combineReducers({
-  shots
+  shots,
+  leagueAverages
 });
 
 let enhancer;
