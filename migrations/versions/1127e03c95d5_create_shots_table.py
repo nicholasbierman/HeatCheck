@@ -36,6 +36,8 @@ def upgrade():
                     sa.Column('y', sa.Integer(), nullable=True),
                     sa.Column('shot_zone', sa.String(
                         length=255), nullable=True),
+                    sa.Column('shot_made_flag', sa.Boolean(),
+                              nullable=False, default=True),
                     sa.ForeignKeyConstraint(
                         ['nba_player_id'], ['players.nba_player_id'], ),
                     sa.PrimaryKeyConstraint('id')
