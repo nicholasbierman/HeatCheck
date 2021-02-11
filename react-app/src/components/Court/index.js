@@ -7,7 +7,6 @@ import { getLeagueAverages } from '../../store/leagueAverages';
 
 export const Court = () => {
     const shots = useSelector(state => state.shots.shots);
-    const leagueAverages = useSelector(state => state.leagueAverages.leagueAverages)
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getShotsByPlayerId(201939))
