@@ -50,11 +50,13 @@ export const Court = () => {
                     <text x="400" y="465">More Efficient</text>
             </g>
             <g>
-                    { shots && shots.map(shot => {
-                        console.log(shot.shot_made_flag)
+                    { shots && shots.map((shot, i) => {
+                        if (shot.shot_made_flag) {
                             return (
-                                <ShotMark x={ shot.x } y={ shot.y } />
+                                <ShotMark key={ i }x={ shot.x } y={ shot.y } />
                             )
+                        }
+                        return null;
                 })}
                 </g>
             </svg>
