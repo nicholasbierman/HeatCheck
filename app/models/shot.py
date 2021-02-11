@@ -10,7 +10,7 @@ class Shot(db.Model):
     x = db.Column(db.Integer)
     y = db.Column(db.Integer)
     shot_zone = db.Column(db.String(255))
-
+    shot_made_flag = db.Column(db.Boolean, nullable=False, default=True)
     def to_dict(self):
         return {
             "id": self.id,
