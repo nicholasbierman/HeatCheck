@@ -51,9 +51,10 @@ export const Court = () => {
             </g>
             <g>
                     { shots && shots.map(shot => {
-                        return (
-                            <ShotMark x={ shot.x } y={ shot.y }/>
-                    )
+                        console.log(shot.shot_made_flag)
+                            return (
+                                <ShotMark x={ shot.x } y={ shot.y } />
+                            )
                 })}
                 </g>
             </svg>
