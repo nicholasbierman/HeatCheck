@@ -1,14 +1,15 @@
 from flask import Blueprint, request
+from app.models.shot import Shot
 import json
 import requests
 
 shot_routes = Blueprint("shots", __name__)
 
 
-# @shot_routes.route('/<int:id>')
-# def get_shots_by_player_id(id):
-#     shots = Shot.query.filter(Shot.nba_player_id == id)
-#     return {"shots": [shot.to_dict() for shot in shots]}
+@shot_routes.route('/<int:id>')
+def get_shots_by_player_id(id):
+    shots = Shot.query.filter(Shot.nba_player_id == id)
+    return {"shots": [shot.to_dict() for shot in shots]}
 
 
 url_base = 'https://stats.nba.com/stats/shotchartdetail'
@@ -52,4 +53,4 @@ parameters = {
 
 response = requests.get(url_base, params=parameters, headers=headers)
 content = json.loads(response.content)
-print(content)
+result_sets = content["resultSets"][0]["rowSet"][0][0]
