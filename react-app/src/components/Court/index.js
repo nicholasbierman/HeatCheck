@@ -7,11 +7,27 @@ import { getLeagueAverages } from '../../store/leagueAverages';
 
 export const Court = () => {
     const shots = useSelector(state => state.shots.shots);
+
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(getShotsByPlayerId(201939))
         dispatch(getLeagueAverages())
-    }, [dispatch])
+    }, [ dispatch ])
+    
+    const getPlayerEfficiencyByZone = (zone) => {
+        let fga = 0;
+        let fgm = 0;
+        shots.forEach(shot => {
+            if (shot.shot_zone === zone) {
+                fga += 1;
+                if (shot.shot_made_flag) {
+                    fgm += 1;
+                }
+            }
+        });
+        return fgm/fga;
+    }
     return (
         <div>
         <svg stroke="gray" fill="none" viewBox="0 0 500 470">
@@ -57,7 +73,7 @@ export const Court = () => {
                         }
                         return null;
                 })}
-                </g>
+            </g>
             </svg>
         </div>
 
