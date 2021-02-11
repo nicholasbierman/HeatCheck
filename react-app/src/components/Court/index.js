@@ -17,7 +17,7 @@ export const Court = () => {
         <div>
         <svg stroke="gray" fill="none" viewBox="0 0 500 470">
             <g>
-                <polyline className="baseline-and-corner-three" fill="none" viewBox="0 0 440 140" points="470,140 470,0 30,0 30,140">
+                <polyline className="baseline-and-corner-three" fill="none" points="470,140 470,0 30,0 30,140">
                 </polyline>
                 <rect width="160" height="190" x="170"></rect>
                 <line x1="310" y1="190" x2="310" y2="0"></line>
@@ -34,7 +34,8 @@ export const Court = () => {
                 <line className="left-lane-hash" x1="165" y1="80" x2="170" y2="80"></line> {/* 8 feet from baseline, 6 inches wide */}
                 <line className="left-lane-hash" x1="165" y1="110" x2="170" y2="110"></line> {/* 11 feet from baseline, 6 inches wide */}
                 <line className="left-lane-hash" x1="165" y1="140" x2="170" y2="140"></line> {/* 14 feet from baseline, 6 inches wide */}
-                {/* 3 point line has parallel lines 3' from sidelines and an arc of 23'4" from the middle of the basket */}
+                    {/* 3 point line has parallel lines 3' from sidelines and an arc of 23'4" from the middle of the basket */ }
+                <line className="left-break-hash" x1="0" x2="30" y1="280" y2="280"></line> {/* break hash is 28 feet from the baseline and extends 3 ft onto the court */}
                     <path fill="none" className="three-point-line-center" d="M30,140 c50,122,190,180,310,130c60-24.9,106-71,130-130"></path>
             </g>
             <g className="hoop">
