@@ -18,6 +18,14 @@ depends_on = None
 
 
 def upgrade():
+    # op.create_table('teams',
+    #                 sa.Column('id', sa.Integer(),
+    #                           nullable=False),
+    #                 sa.Column('team_id', sa.Integer(), nullable=False, unique=True),
+    #                 sa.Column('team_name', sa.String(
+    #                     length=255), nullable=False),
+    #                 sa.PrimaryKeyConstraint('id'),
+    #                 )
     op.create_table('players',
                     sa.Column('id', sa.Integer(), nullable=False),
                     sa.Column('first_name', sa.String(
@@ -27,7 +35,8 @@ def upgrade():
                     sa.Column('team_id', sa.Integer(), nullable=False),
                     sa.Column('nba_player_id', sa.Integer(),
                               nullable=True, unique=True),
-                    sa.PrimaryKeyConstraint('id')
+                    sa.PrimaryKeyConstraint('id'),
+                    sa.ForeignKeyConstraint(['team_id'], ['teams.team_id'], ondelete='CASCADE')
                     )
     op.create_table('shots',
                     sa.Column('id', sa.Integer(), nullable=False),
@@ -42,6 +51,7 @@ def upgrade():
                         ['nba_player_id'], ['players.nba_player_id'], ),
                     sa.PrimaryKeyConstraint('id')
                     )
+   
 
 
 def downgrade():

@@ -7,12 +7,15 @@ def seed_players():
     players = json.loads(requests.get(
         'https://raw.githubusercontent.com/bttmly/nba/master/data/players.json').text)
     for player in players:
+        if player['teamId'] == 0:
+            pass
         new_player = Player(
             first_name=player["firstName"],
             last_name=player["lastName"],
             team_id=player["teamId"],
             nba_player_id=player["playerId"]
             )
+        
         db.session.add(new_player)
         db.session.commit()
         db.session.flush()

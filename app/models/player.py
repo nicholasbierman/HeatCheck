@@ -6,7 +6,7 @@ class Player(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     nba_player_id = db.Column(db.Integer)
-    team_id = db.Column(db.Integer)
+    team_id = db.Column(db.Integer, db.ForeignKey('teams.team_id'))
     first_name = db.Column(db.String(255))
     last_name = db.Column(db.String(255))
 
