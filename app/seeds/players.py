@@ -1,18 +1,21 @@
 from app.models import db, Player
+import requests
+import json
 
 
 def seed_players():
-    curry = Player(
-        nba_player_id=201939,
-        first_name="Stephen",
-        last_name="Curry",
-        full_name="Stephen Curry"
-    )
-    harden = Player(nba_player_id=201935, first_name="James", last_name="Harden", full_name="James Harden")
-
-    db.session.add(curry)
-    db.session.add(harden)
-    db.session.commit()
+    players = json.loads(requests.get(
+        'https://raw.githubusercontent.com/bttmly/nba/master/data/players.json').text)
+    for player in players:
+        new_player = Player(
+            first_name=player["firstName"],
+            last_name=player["lastName"],
+            team_id=player["teamId"],
+            nba_player_id=player["playerId"]
+            )
+        db.session.add(new_player)
+        db.session.commit()
+        db.session.flush()
 
 
 def undo_players():
