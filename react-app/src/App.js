@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Court } from './components/Court'
+import { Court } from './components/Court';
+import { NavBar } from './components/NavBar/NavBar.js';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/">
-          <h1>HeatCheck</h1>
+          <NavBar />
           <Court />
         </Route>
       </Switch>
