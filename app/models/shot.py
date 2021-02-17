@@ -11,6 +11,7 @@ class Shot(db.Model):
     y = db.Column(db.Integer)
     shot_zone = db.Column(db.String(255))
     shot_made_flag = db.Column(db.Boolean, nullable=False, default=True)
+
     def to_dict(self):
         return {
             "nba_player_id": self.nba_player_id,
