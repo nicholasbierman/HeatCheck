@@ -60,9 +60,12 @@ export const Court = () => {
                     <path stroke="orange" className="rim" d="M250,55 c4,0,7-3,7-7c0-4-4-7-7-7c-4,0-7.197,3-7,7 C243,52,246,55,250,55z"></path>
                 </g>
                 <g className="efficiency-legend">
-                    <rect x="350" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(0, 0, 255)"></rect>
-                    <rect x="380" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(0, 150, 255)"></rect>
-                    <rect x="410" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(163, 225, 255)"></rect>
+                    <rect x="380" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(0, 0, 255)"></rect>
+                    <rect x="400" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(0, 150, 255)"></rect>
+                    <rect x="420" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(163, 225, 255)"></rect>
+                    <rect x="440" y="450" width="15" height="15" rx="2" ry="2" fill="gold"></rect>
+                    <rect x="460" y="450" width="15" height="15" rx="2" ry="2" fill="orange"></rect>
+                    <rect x="480" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(255, 0, 0)"></rect>
             </g>
             <g>
                     { shots && shots.map((shot, i) => {
