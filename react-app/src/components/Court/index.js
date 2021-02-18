@@ -60,6 +60,7 @@ export const Court = () => {
                     <path stroke="orange" className="rim" d="M250,55 c4,0,7-3,7-7c0-4-4-7-7-7c-4,0-7.197,3-7,7 C243,52,246,55,250,55z"></path>
                 </g>
                 <g className="efficiency-legend">
+                    <text x="380" y="445" style={{ fontSize: "12px" }}>Efficiency By Location</text>
                     <rect x="380" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(0, 0, 255)"></rect>
                     <rect x="400" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(0, 150, 255)"></rect>
                     <rect x="420" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(163, 225, 255)"></rect>
