@@ -32,9 +32,8 @@ export const Court = () => {
     return (
         <div>
             <svg stroke="gray" fill="none" viewBox="0 0 500 470">
-            <g>
-                <polyline className="baseline-and-corner-three" fill="none" points="470,140 470,0 30,0 30,140">
-                </polyline>
+            <g style={{fillOpacity: "0.2"}}>
+                <polyline className="baseline-and-corner-three" fill="purple" points="470,140 470,0 30,0 30,140"></polyline>
                 <rect width="160" height="190" x="170"></rect>
                 <line x1="310" y1="190" x2="310" y2="0"></line>
                 <line x1="190" y1="190" x2="190" y2="0"></line>
