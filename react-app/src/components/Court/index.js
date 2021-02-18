@@ -8,7 +8,6 @@ import { getPlayerById } from '../../store/player';
 
 export const Court = () => {
     const shots = useSelector(state => state.shots.shots);
-
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -32,7 +31,7 @@ export const Court = () => {
     }
     return (
         <div>
-        <svg stroke="gray" fill="none" viewBox="0 0 500 470">
+            <svg stroke="gray" fill="none" viewBox="0 0 500 470">
             <g>
                 <polyline className="baseline-and-corner-three" fill="none" points="470,140 470,0 30,0 30,140">
                 </polyline>
