@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getShotsByPlayerId } from "../../store/shots";
 import ShotMark from '../ShotMark/shotMark'
 import { getLeagueAverages } from '../../store/leagueAverages';
+import { getPlayerById } from '../../store/player';
 
 
 export const Court = () => {
@@ -13,6 +14,7 @@ export const Court = () => {
     useEffect(() => {
         dispatch(getShotsByPlayerId(201939))
         dispatch(getLeagueAverages())
+        dispatch(getPlayerById(201939))
     }, [ dispatch ])
     
     const getPlayerEfficiencyByZone = (zone) => {
