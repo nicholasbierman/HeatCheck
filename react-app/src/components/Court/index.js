@@ -34,7 +34,7 @@ export const Court = () => {
             <svg stroke="gray" fill="none" viewBox="0 0 500 470">
             <g opacity="1">
                     <polyline className="baseline-and-corner-three" points="470,140 470,0 30,0 30,140"></polyline>
-                    <path style={{fillOpacity: "0.3"}}className="zone right-mid-range" d="M470,140, 470,0, 330,0 330,140" fill="purple"></path>
+                    <path style={{fillOpacity: "0.3"}}className="zone right-mid-range" d="M470,140, 470,0, 330,0 330,140"></path>
                 <rect width="160" height="190" x="170"></rect>
                 <line x1="310" y1="190" x2="310" y2="0"></line>
                 <line x1="190" y1="190" x2="190" y2="0"></line>
