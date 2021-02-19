@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Court } from './components/Court';
+import { Court } from './components/Court/Court';
 import { NavBar } from './components/NavBar/NavBar.js';
 import { CourtTitle } from './components/CourtTitle/courtTitle.js'
 
