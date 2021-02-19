@@ -1,55 +1,7 @@
 from app.models import db, Shot
-import requests
-import json
 
 
 def seed_shots():
-    # url_base = 'https://stats.nba.com/stats/shotchartdetail'
-    # headers = {
-    #     'Host': 'stats.nba.com',
-    #     'Connection': 'keep-alive',
-    #     'Accept': 'application/json, text/plain, */*',
-    #     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
-    #     'Referer': 'https://stats.nba.com/',
-    #     "x-nba-stats-origin": "stats",
-    #     "x-nba-stats-token": "true",
-    #     'Accept-Encoding': 'gzip, deflate, br',
-    #     'Accept-Language': 'en-US,en;q=0.9',
-    # }
-    # parameters = {
-    #     'ContextMeasure': 'PTS',
-    #     'LastNGames': 0,
-    #     'LeagueID': '00',
-    #     'Month': 0,
-    #     'OpponentTeamID': 0,
-    #     'Period': 0,
-    #     'PlayerID': id,
-    #     'SeasonType': 'Regular Season',
-    #     'TeamID': 0,
-    #     'VsDivision': '',
-    #     'VsConference': '',
-    #     'SeasonSegment': '',
-    #     'Season': '2018-19',
-    #     'RookieYear': '',
-    #     'PlayerPosition': '',
-    #     'Outcome': '',
-    #     'Location': '',
-    #     'GameSegment': '',
-    #     'GameId': '',
-    #     'DateTo': '',
-    #     'DateFrom': ''
-    # }
-    # response = requests.get(url_base, params=parameters, headers=headers)
-    # content = json.loads(response.content)
-    # results = content["resultSets"][0]["rowSet"]
-    # print(results[0])
-    # for shot in results:
-    #     new_shot = Shot(nba_player_id=shot[3], x=shot[17]+250, y=shot[18]+55,
-    #                     shot_made_flag=shot[20], shot_zone=shot[14])
-    #     db.session.add(new_shot)
-    #     db.session.commit()
-    #     db.session.flush()
-
     shot3 = Shot(nba_player_id=201939, x=250, y=250,
                  shot_zone="Restriced Area - Center(C)", shot_made_flag=1)
     shot1 = Shot(nba_player_id=201939, x=200, y=250,
