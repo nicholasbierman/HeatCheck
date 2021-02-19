@@ -7,6 +7,9 @@ import { getPlayerById } from '../../store/player';
 import { Zone } from '../Zone/Zone';
 import { EfficiencyLegend } from '../EfficiencyLegend/EfficiencyLegend'
 import { CourtLines } from '../CourtLines/CourtLines';
+import { Hoop } from '../Hoop/Hoop';
+
+
 
 export const Court = () => {
     const shots = useSelector(state => state.shots.shots);
@@ -22,10 +25,7 @@ export const Court = () => {
         <div>
             <svg stroke="gray" fill="none" viewBox="0 0 500 470">
             <CourtLines />
-            <g className="hoop">
-                <line className="backboard" x1="280" y1="40" x2="220" y2="40"></line> {/* 4 feet from baseline, measures 6' horizontally */}
-                    <path stroke="orange" className="rim" d="M250,55 c4,0,7-3,7-7c0-4-4-7-7-7c-4,0-7.197,3-7,7 C243,52,246,55,250,55z"></path>
-                </g>
+            <Hoop />
             <g>
                     { shots && shots.map((shot, i) => {
                         if (shot.shot_made_flag) {
@@ -36,9 +36,8 @@ export const Court = () => {
                         return null;
                 })}
                 </g>
-                <EfficiencyLegend />
+            <EfficiencyLegend />
             </svg>
         </div>
-
     )
 }
