@@ -4,7 +4,8 @@ import { getShotsByPlayerId } from "../../store/shots";
 import ShotMark from '../ShotMark/shotMark'
 import { getLeagueAverages } from '../../store/leagueAverages';
 import { getPlayerById } from '../../store/player';
-
+import { Zone } from '../Zone/Zone';
+import { EfficiencyLegend } from '../EfficencyLegend/EfficiencyLegend'
 
 export const Court = () => {
     const shots = useSelector(state => state.shots.shots);
@@ -19,9 +20,8 @@ export const Court = () => {
     return (
         <div>
             <svg stroke="gray" fill="none" viewBox="0 0 500 470">
-            <g opacity="1">
-                    <polyline className="baseline-and-corner-three" points="470,140 470,0 30,0 30,140"></polyline>
-                    <path style={{fillOpacity: "0.3"}} fill="purple" className="zone right-mid-range" d="M470,140, 470,0, 330,0 330,140"></path>
+            <g>
+                <polyline className="baseline-and-corner-three" points="470,140 470,0 30,0 30,140"></polyline>
                 <rect width="160" height="190" x="170"></rect>
                 <line x1="310" y1="190" x2="310" y2="0"></line>
                 <line x1="190" y1="190" x2="190" y2="0"></line>
@@ -46,15 +46,6 @@ export const Court = () => {
                 <line className="backboard" x1="280" y1="40" x2="220" y2="40"></line> {/* 4 feet from baseline, measures 6' horizontally */}
                     <path stroke="orange" className="rim" d="M250,55 c4,0,7-3,7-7c0-4-4-7-7-7c-4,0-7.197,3-7,7 C243,52,246,55,250,55z"></path>
                 </g>
-                <g className="efficiency-legend">
-                    <text x="380" y="445" style={{ fontSize: "12px" }}>Efficiency By Location</text>
-                    <rect x="380" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(0, 0, 255)"></rect>
-                    <rect x="400" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(0, 150, 255)"></rect>
-                    <rect x="420" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(163, 225, 255)"></rect>
-                    <rect x="440" y="450" width="15" height="15" rx="2" ry="2" fill="gold"></rect>
-                    <rect x="460" y="450" width="15" height="15" rx="2" ry="2" fill="orange"></rect>
-                    <rect x="480" y="450" width="15" height="15" rx="2" ry="2" fill="rgb(255, 0, 0)"></rect>
-            </g>
             <g>
                     { shots && shots.map((shot, i) => {
                         if (shot.shot_made_flag) {
@@ -64,7 +55,8 @@ export const Court = () => {
                         }
                         return null;
                 })}
-            </g>
+                </g>
+            <EfficiencyLegend />
             </svg>
         </div>
 
