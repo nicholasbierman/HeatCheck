@@ -2,24 +2,24 @@ from app.models import db, Shot
 
 
 def seed_shots():
-    shot3 = Shot(nba_player_id=201939, x=250, y=250,
-                 shot_zone="Restriced Area - Center(C)", shot_made_flag=1)
+    shot3 = Shot(nba_player_id=201939, x=250, y=60,
+                 shot_zone="paint", shot_made_flag=1)
     shot1 = Shot(nba_player_id=201939, x=200, y=250,
-                 shot_zone="In The Paint(Non-RA) - Left Side(L)",
+                 shot_zone="paint",
                  shot_made_flag=1)
     shot2 = Shot(nba_player_id=201939, x=250, y=350,
-                 shot_zone="In The Paint(Non-RA) - Center(C)",
+                 shot_zone="paint",
                  shot_made_flag=1)
     shot4 = Shot(nba_player_id=201939, x=300, y=250,
-                 shot_zone="In The Paint(Non-RA) - Right Side(L)",
+                 shot_zone="paint",
                  shot_made_flag=1)
     shot4 = Shot(nba_player_id=201939, x=470, y=0,
-                 shot_zone="Right Corner 3 - Right Side(R)",
+                 shot_zone="Right Corner 3",
                  shot_made_flag=1)
     shot5 = Shot(nba_player_id=201939, x=10, y=0,
-                 shot_zone="Left Corner 3 - Left Side(L)", shot_made_flag=1)
+                 shot_zone="Left Corner 3", shot_made_flag=1)
     shot7 = Shot(nba_player_id=201939, x=250, y=250,
-                 shot_zone="Back Court - Backcourt(BC)", shot_made_flag=1)
+                 shot_zone="Back Court", shot_made_flag=1)
     shot8 = Shot(nba_player_id=201939, x=300, y=170, shot_made_flag=0,
                  shot_zone="Mid-Range - Right Side(R)")
     shot9 = Shot(nba_player_id=201939, x=50, y=170,
