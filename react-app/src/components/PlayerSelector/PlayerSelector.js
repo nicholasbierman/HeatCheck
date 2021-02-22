@@ -3,13 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllPlayers } from '../../store/allPlayers';
 
 export const PlayerSelector = () => {
-    const players = useSelector(state => state.allPlayers.allPlayers);
+    const allPlayers = useSelector(state => state.allPlayers.allPlayers);
     const dispatch = useDispatch();
+    
     useEffect(() => {
         dispatch(getAllPlayers())
-    })
+    }, [dispatch])
 
     return (
-        null
+        <div>
+            <p>Players</p>
+        </div>
     )
 }
