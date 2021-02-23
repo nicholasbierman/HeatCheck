@@ -11,8 +11,6 @@ export const PlayerSelector = () => {
     }, [dispatch])
 
     return (
-        <div>
-            <p>Players</p>
-        </div>
+        null
     )
 }
