@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setPlayer } from '../../store/player';
+import { getPlayerById, setPlayer } from '../../store/player';
 
 export const ChangePlayerButton = () => {
     const dispatch = useDispatch();
     const allPlayers = useSelector(state => state.allPlayers.allPlayers);
     const [ selectedPlayer, setSelectedPlayer ] = useState(null);
     useEffect(() => {
-        console.log('SELECTED PLAYER CHANGED', selectedPlayer)
+        dispatch(getPlayerById(selectedPlayer))
     }, [selectedPlayer])
     return (
         <form onSubmit={ () => setPlayer(selectedPlayer)}>
