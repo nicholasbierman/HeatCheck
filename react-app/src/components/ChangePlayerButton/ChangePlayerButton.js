@@ -10,9 +10,11 @@ export const ChangePlayerButton = () => {
     useEffect(() => {
         dispatch(getPlayerById(selectedPlayer))
         dispatch(getShotsByPlayerId(selectedPlayer));
-    }, [selectedPlayer])
+    }, [ selectedPlayer ])
+    
+    
     return (
-        <form>
+        <form onSubmit={(e) => e.preventDefault() }>
             <select onChange={(e) => setSelectedPlayer(e.target.value) }>
                 { allPlayers.map((player, i) => {
                     return <option key={ i } value={player.nba_player_id}>{ player.first_name } { player.last_name }</option>
