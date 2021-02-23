@@ -9,7 +9,7 @@ export const ChangePlayerButton = () => {
         <form>
             <select>
                 { allPlayers.map((player) => {
-                    return <option>{ player.first_name }</option>
+                    return <option>{ player.first_name } { player.last_name }</option>
                 })}
             </select>
         <button style={{backgroundColor: "blueviolet", borderColor: "transparent", cursor: "pointer", borderRadius: "4px", width: "10%", }}>Change Player
