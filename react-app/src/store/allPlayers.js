@@ -6,12 +6,12 @@ const setAllPlayers = (players) => ({
 });
 
 export const getAllPlayers = () => async (dispatch) => {
-    const response = await fetch('/api/player/all')
-    const data = await response.json()
+    const response = await fetch('/api/player/all');
+    const data = await response.json();
     dispatch(setAllPlayers(data.allPlayers));
 }
 
-const initialState = { allPlayers: {} }
+const initialState = { allPlayers: [] }
 
 function reducer (state = initialState, action) {
     let newState;
