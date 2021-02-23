@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { getPlayerById } from '../../store/player';
+import { getShotsByPlayerId } from '../../store/shots';
 
 export const ChangePlayerButton = () => {
     const dispatch = useDispatch();
@@ -8,6 +9,7 @@ export const ChangePlayerButton = () => {
     const [ selectedPlayer, setSelectedPlayer ] = useState(null);
     useEffect(() => {
         dispatch(getPlayerById(selectedPlayer))
+        dispatch(getShotsByPlayerId(selectedPlayer));
     }, [selectedPlayer])
     return (
         <form>
