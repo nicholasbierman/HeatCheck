@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getAllPlayers } from '../../store/allPlayers';
 export const ChangePlayerButton = () => {
     const dispatch = useDispatch();
     const allPlayers = useSelector(state => state.allPlayers.allPlayers);
