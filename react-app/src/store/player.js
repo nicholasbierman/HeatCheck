@@ -1,6 +1,6 @@
 const SET_PLAYER = 'player/setPlayer'
 
-const setPlayer = (player) => ({
+export const setPlayer = (player) => ({
     type: SET_PLAYER,
     payload: player
 });

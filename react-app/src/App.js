@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Court } from './components/Court/Court';
 import { NavBar } from './components/NavBar/NavBar.js';
 import { CourtTitle } from './components/CourtTitle/courtTitle.js'
+import { ChangePlayerButton } from './components/ChangePlayerButton/ChangePlayerButton';
+import { PlayerSelector } from './components/PlayerSelector/PlayerSelector';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Switch>
         <Route path="/">
           <NavBar />
+          <ChangePlayerButton />
+          <PlayerSelector />
           <CourtTitle />
           <Court />
         </Route>

@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import shots from './shots'
 import leagueAverages from './leagueAverages'
 import player from './player';
+import allPlayers from './allPlayers';
 
 const rootReducer = combineReducers({
   shots,
   leagueAverages,
-  player
+  player,
+  allPlayers
 });
 
 let enhancer;
