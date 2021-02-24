@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { getShotsByPlayerId } from "../../store/shots";
 import ShotMark from '../ShotMark/shotMark'
@@ -15,6 +15,8 @@ import { Hoop } from '../Hoop/Hoop';
 export const Court = () => {
     const shots = useSelector(state => state.shots.shots);
     const dispatch = useDispatch();
+    const [ highlightedZone, setHighlightedZone ] = useState();
+
 
     useEffect(() => {
         dispatch(getShotsByPlayerId(201939))
