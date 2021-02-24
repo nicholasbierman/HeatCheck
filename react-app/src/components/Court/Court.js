@@ -37,6 +37,7 @@ export const Court = () => {
                         return null;
                 })}
                 </g>
+            <Zone />
             <EfficiencyLegend />
             </svg>
         </div>
