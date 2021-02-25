@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { getShotsByPlayerId } from "../../store/shots";
 import ShotMark from '../ShotMark/shotMark'
@@ -9,6 +9,7 @@ import { EfficiencyLegend } from '../EfficiencyLegend/EfficiencyLegend'
 import { CourtLines } from '../CourtLines/CourtLines';
 import { Hoop } from '../Hoop/Hoop';
 import { ChangePlayerButton } from "../ChangePlayerButton/ChangePlayerButton";
+import { getComparisonPlayerById } from '../../store/comparisonPlayer';
 
 
 
@@ -16,7 +17,6 @@ import { ChangePlayerButton } from "../ChangePlayerButton/ChangePlayerButton";
 export const HalfCourt = ({right}) => {
     const shots = useSelector(state => state.shots.shots);
     const dispatch = useDispatch();
-    const [ highlightedZone, setHighlightedZone ] = useState();
 
 
     useEffect(() => {
