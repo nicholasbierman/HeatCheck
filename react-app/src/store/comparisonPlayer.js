@@ -16,7 +16,7 @@ const initialState = { comparisonPlayer: {} }
 function reducer (state = initialState, action) {
     let newState;
     switch (action.type) {
-        case SETC_COMPARISON_PLAYER:
+        case SET_COMPARISON_PLAYER:
             newState = { ...state, comparisonPlayer: action.payload }
             return newState;
         default:
