@@ -10,17 +10,18 @@ import { CourtLines } from '../CourtLines/CourtLines';
 import { Hoop } from '../Hoop/Hoop';
 import { ChangePlayerButton } from "../ChangePlayerButton/ChangePlayerButton";
 import { getComparisonPlayerById } from '../../store/comparisonPlayer';
-
-
+import { getComparisonShotsByPlayerId } from '../../store/comparisonShots';
 
 
 export const HalfCourt = ({comparison}) => {
     const shots = useSelector(state => state.shots.shots);
+    const comparisonShots = useSelector(state => state.comparisonShots.comparisonShots)
     const dispatch = useDispatch();
 
 
     useEffect(() => {
         dispatch(getShotsByPlayerId(201939));
+        dispatch(getComparisonShotsByPlayerId(201939));
         dispatch(getLeagueAverages());
         dispatch(getPlayerById(201939));
         dispatch(getComparisonPlayerById(201935));
@@ -33,14 +34,21 @@ export const HalfCourt = ({comparison}) => {
             <CourtLines />
             <Hoop />
             <g stroke="slategray" strokeWidth="0.4px">
-                    { shots && shots.map((shot, i) => {
+                    { !comparison ? shots && shots.map((shot, i) => {
                         if (shot.shot_made_flag) {
                             return (
                                 <ShotMark key={ i }x={ shot.x } y={ shot.y } />
                             )
                         }
                         return null;
-                })}
+                    }) : comparisonShots && comparisonShots.map((shot, i) => {
+                        if (shot.shot_made_flag) {
+                            return (
+                                <ShotMark key={i} x={shot.x} y={shot.y} />
+                            )
+                        }
+                        return null;
+                    })}
                 </g>
             <Zone />
             <EfficiencyLegend />

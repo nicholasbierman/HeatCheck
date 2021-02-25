@@ -1,6 +1,6 @@
 const SET_COMPARISON_SHOTS = 'shots/setComparisonShots';
 
-const setPlayerShots = (shots) => ({
+const setComparisonShots = (shots) => ({
     type: SET_COMPARISON_SHOTS,
     payload: shots
 })
