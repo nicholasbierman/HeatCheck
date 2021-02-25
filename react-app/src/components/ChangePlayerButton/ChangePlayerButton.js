@@ -27,10 +27,9 @@ export const ChangePlayerButton = ({comparison}) => {
         dispatch(getAllPlayers())
     }, [dispatch])
     
-    
     return (
         <form onSubmit={(e) => e.preventDefault()}>
-            <select style={ {cursor: "pointer", backgroundColor: "blueviolet", default: "Hello", borderColor: "transparent", cursor: "pointer", borderRadius: "4px"} } onChange={(e) => comparison ? setComparisonPlayer(e.target.value) : setSelectedPlayer(e.target.value)}>
+            <select style={ {cursor: "pointer", backgroundColor: "slategray", borderColor: "transparent", cursor: "pointer", borderRadius: "4px"} } onChange={(e) => comparison ? setComparisonPlayer(e.target.value) : setSelectedPlayer(e.target.value)}>
                 {allPlayers.map((player, i) => {
                     return <option key={ i } value={player.nba_player_id}>{ player.last_name }, { player.first_name }</option>
                 })}

@@ -37,18 +37,18 @@ export const HalfCourt = ({comparison}) => {
                     { !comparison ? shots && shots.map((shot, i) => {
                         if (shot.shot_made_flag) {
                             return (
-                                <ShotMark key={ i }x={ shot.x } y={ shot.y } />
-                            )
-                        }
+                                <ShotMark comparison={comparison} key={ i }x={ shot.x } y={ shot.y } />
+                                )
+                            }
                         return null;
-                    }) : comparisonShots && comparisonShots.map((shot, i) => {
-                        if (shot.shot_made_flag) {
-                            return (
-                                <ShotMark key={i} x={shot.x} y={shot.y} />
-                            )
-                        }
-                        return null;
-                    })}
+                        }) : comparisonShots && comparisonShots.map((shot, i) => {
+                            if (shot.shot_made_flag) {
+                                return (
+                                    <ShotMark comparison={comparison} key={i} x={shot.x} y={shot.y} />
+                                )
+                            }
+                            return null;
+                        })}
                 </g>
             <Zone />
             <EfficiencyLegend />
