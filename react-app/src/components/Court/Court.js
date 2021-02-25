@@ -8,6 +8,7 @@ import { Zone } from '../Zone/Zone';
 import { EfficiencyLegend } from '../EfficiencyLegend/EfficiencyLegend'
 import { CourtLines } from '../CourtLines/CourtLines';
 import { Hoop } from '../Hoop/Hoop';
+import { CourtTitle } from '../CourtTitle/courtTitle';
 
 
 
@@ -25,7 +26,8 @@ export const Court = () => {
     }, [ dispatch ])
     
     return (
-        <div style={{backgroundColor: "black"}}>
+        <div style={{ backgroundColor: "black" }}>
+            <CourtTitle />
             <svg stroke="gray" fill="none" viewBox="0 0 500 470">
             <CourtLines />
             <Hoop />
