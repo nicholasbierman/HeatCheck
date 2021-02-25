@@ -8,6 +8,7 @@ import { Zone } from '../Zone/Zone';
 import { EfficiencyLegend } from '../EfficiencyLegend/EfficiencyLegend'
 import { CourtLines } from '../CourtLines/CourtLines';
 import { Hoop } from '../Hoop/Hoop';
+import { ChangePlayerButton } from "../ChangePlayerButton/ChangePlayerButton";
 
 
 
@@ -25,7 +26,8 @@ export const HalfCourt = ({right}) => {
     }, [ dispatch ])
     
     return (
-        <div style={{backgroundColor: "black", width: "50%", display: "inline-block"}}>
+        <div style={{ backgroundColor: "black", width: "50%", display: "inline-block" }}>
+            <ChangePlayerButton />
             <svg maxWidth="100%" stroke="gray" fill="none" viewBox="0 0 500 470">
             <CourtLines />
             <Hoop />
