@@ -17,7 +17,6 @@ function App() {
         </Route>
         <Route path="/">
           <NavBar />
-          <ChangePlayerButton />
           <Court />
         </Route>
       </Switch>
