@@ -5,6 +5,7 @@ import { NavBar } from './components/NavBar/NavBar.js';
 import { CourtTitle } from './components/CourtTitle/courtTitle.js'
 import { ChangePlayerButton } from './components/ChangePlayerButton/ChangePlayerButton';
 import { PlayerSelector } from './components/PlayerSelector/PlayerSelector';
+import { Zone } from './components/Zone/Zone';
 
 function App() {
   return (

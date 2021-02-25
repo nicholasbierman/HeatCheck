@@ -14,14 +14,14 @@ export const ChangePlayerButton = () => {
     
     
     return (
-        <form onSubmit={(e) => e.preventDefault() }>
-            <select onChange={(e) => setSelectedPlayer(e.target.value) }>
-                { allPlayers.map((player, i) => {
+        <form onSubmit={(e) => e.preventDefault()}>
+            <select style={ {cursor: "pointer", backgroundColor: "blueviolet", borderColor: "transparent", cursor: "pointer", borderRadius: "4px"} } onChange={(e) => setSelectedPlayer(e.target.value)}>
+                {allPlayers.map((player, i) => {
                     return <option key={ i } value={player.nba_player_id}>{ player.first_name } { player.last_name }</option>
                 })}
             </select>
-        <button style={{backgroundColor: "blueviolet", borderColor: "transparent", cursor: "pointer", borderRadius: "4px", width: "10%", }}>Change Player
-        </button>
+        {/* <button style={{backgroundColor: "blueviolet", borderColor: "transparent", cursor: "pointer", borderRadius: "4px", width: "10%"}}>Change Player
+        </button> */}
         </form>
     )
 }
