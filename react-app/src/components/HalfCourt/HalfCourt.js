@@ -14,15 +14,16 @@ import { getComparisonPlayerById } from '../../store/comparisonPlayer';
 
 
 
-export const HalfCourt = ({right}) => {
+export const HalfCourt = ({comparison}) => {
     const shots = useSelector(state => state.shots.shots);
     const dispatch = useDispatch();
 
 
     useEffect(() => {
-        dispatch(getShotsByPlayerId(201939))
-        dispatch(getLeagueAverages())
-        dispatch(getPlayerById(201939))
+        dispatch(getShotsByPlayerId(201939));
+        dispatch(getLeagueAverages());
+        dispatch(getPlayerById(201939));
+        dispatch(getComparisonPlayerById(201935));
     }, [ dispatch ])
     
     return (
