@@ -29,7 +29,7 @@ export const Court = () => {
             <svg stroke="gray" fill="none" viewBox="0 0 500 470">
             <CourtLines />
             <Hoop />
-            <g>
+            <g stroke="slategray" strokeWidth="0.4px">
                     { shots && shots.map((shot, i) => {
                         if (shot.shot_made_flag) {
                             return (
