@@ -1,7 +1,14 @@
 from app.models import db, Shot
-
+import requests
+import json
+import pprint
 
 def seed_shots():
+    with open('/Users/nick/Desktop/app-academy/projects/heat-check/app/seeds/curry_shot_data.txt') as file:
+        data = json.load(file)
+        pp = pprint.PrettyPrinter(indent=4)
+        pp.pprint(data["resultSets"][0]["rowSet"])
+
     shot3 = Shot(nba_player_id=201939, x=250, y=60,
                  shot_zone="paint", shot_made_flag=1)
     shot1 = Shot(nba_player_id=201939, x=200, y=250,
