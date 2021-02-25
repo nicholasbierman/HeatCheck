@@ -29,7 +29,7 @@ export const HalfCourt = ({comparison}) => {
     
     return (
         <div style={{ backgroundColor: "black", width: "50%", display: "inline-block" }}>
-            <ChangePlayerButton />
+            <ChangePlayerButton comparison={comparison}/>
             <svg maxWidth="100%" stroke="gray" fill="none" viewBox="0 0 500 470">
             <CourtLines />
             <Hoop />
