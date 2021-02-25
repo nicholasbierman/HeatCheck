@@ -1,1 +1,10 @@
 /* TODO Add site wide styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    width: 100%;
+}
+

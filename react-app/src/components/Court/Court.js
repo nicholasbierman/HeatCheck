@@ -25,7 +25,7 @@ export const Court = () => {
     }, [ dispatch ])
     
     return (
-        <div>
+        <div style={{backgroundColor: "black"}}>
             <svg stroke="gray" fill="none" viewBox="0 0 500 470">
             <CourtLines />
             <Hoop />
