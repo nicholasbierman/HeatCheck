@@ -12,7 +12,7 @@ import { Hoop } from '../Hoop/Hoop';
 
 
 
-export const Court = () => {
+export const HalfCourt = ({right}) => {
     const shots = useSelector(state => state.shots.shots);
     const dispatch = useDispatch();
     const [ highlightedZone, setHighlightedZone ] = useState();
@@ -25,8 +25,8 @@ export const Court = () => {
     }, [ dispatch ])
     
     return (
-        <div style={{backgroundColor: "black"}}>
-            <svg stroke="gray" fill="none" viewBox="0 0 500 470">
+        <div style={{backgroundColor: "black", width: "50%", display: "inline-block"}}>
+            <svg maxWidth="100%" stroke="gray" fill="none" viewBox="0 0 500 470">
             <CourtLines />
             <Hoop />
             <g stroke="slategray" strokeWidth="0.4px">
@@ -40,7 +40,7 @@ export const Court = () => {
                 })}
                 </g>
             <Zone />
-            {/* <EfficiencyLegend /> */}
+            <EfficiencyLegend />
             </svg>
         </div>
     )

@@ -4,17 +4,20 @@ import { Court } from './components/Court/Court';
 import { NavBar } from './components/NavBar/NavBar.js';
 import { CourtTitle } from './components/CourtTitle/courtTitle.js'
 import { ChangePlayerButton } from './components/ChangePlayerButton/ChangePlayerButton';
-import { PlayerSelector } from './components/PlayerSelector/PlayerSelector';
-import { Zone } from './components/Zone/Zone';
+import { HalfCourt } from './components/HalfCourt/HalfCourt';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
+        <Route path="/compare">
+          <NavBar />
+          <HalfCourt />
+          <HalfCourt right={true} />
+        </Route>
         <Route path="/">
           <NavBar />
           <ChangePlayerButton />
-          <PlayerSelector />
           <CourtTitle />
           <Court />
         </Route>
