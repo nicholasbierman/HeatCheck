@@ -13,12 +13,10 @@ function App() {
         <Route path="/compare">
           <NavBar />
           <HalfCourt />
-          <HalfCourt right={true} />
+          <HalfCourt comparison={true} />
         </Route>
         <Route path="/">
           <NavBar />
-          <ChangePlayerButton />
-          <CourtTitle />
           <Court />
         </Route>
       </Switch>

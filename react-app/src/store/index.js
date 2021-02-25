@@ -4,12 +4,16 @@ import shots from './shots'
 import leagueAverages from './leagueAverages'
 import player from './player';
 import allPlayers from './allPlayers';
+import comparisonPlayer from './comparisonPlayer';
+import comparisonShots from './comparisonShots';
 
 const rootReducer = combineReducers({
   shots,
   leagueAverages,
   player,
-  allPlayers
+  allPlayers,
+  comparisonPlayer,
+  comparisonShots
 });
 
 let enhancer;
