@@ -28,7 +28,7 @@ export const Court = () => {
     return (
         <div style={{ backgroundColor: "black" }}>
             <CourtTitle />
-            <svg stroke="gray" fill="none" viewBox="0 0 500 470">
+            <svg max-height="fit-content" stroke="gray" fill="none" viewBox="0 0 500 470">
             <CourtLines />
             <Hoop />
             <g stroke="slategray" strokeWidth="0.4px">

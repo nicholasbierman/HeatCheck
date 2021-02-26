@@ -5,6 +5,7 @@ import { NavBar } from './components/NavBar/NavBar.js';
 import { CourtTitle } from './components/CourtTitle/courtTitle.js'
 import { ChangePlayerButton } from './components/ChangePlayerButton/ChangePlayerButton';
 import { HalfCourt } from './components/HalfCourt/HalfCourt';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/">
           <NavBar />
           <Court />
+          <Footer />
         </Route>
       </Switch>
     </BrowserRouter>
