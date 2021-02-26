@@ -4,7 +4,8 @@ import json
 
 
 def seed_shots():
-    with open('/Users/nick/Desktop/app-academy/projects/heat-check/app/seeds/curry_shot_data.txt') as file:
+    base_file_path = '/Users/nick/Desktop/app-academy/projects/heat-check/app'
+    with open(f'{base_file_path}/seeds/curry_shot_data.txt') as file:
         data = json.load(file)
         shot_list = data["resultSets"][0]["rowSet"]
         for shot in shot_list:
@@ -17,7 +18,7 @@ def seed_shots():
             db.session.commit()
             db.session.flush()
 
-    with open('/Users/nick/Desktop/app-academy/projects/heat-check/app/seeds/harden_shot_data.txt') as file:
+    with open(f'{base_file_path}/seeds/harden_shot_data.txt') as file:
         data = json.load(file)
         shot_list = data["resultSets"][0]["rowSet"]
         for shot in shot_list:
@@ -29,7 +30,7 @@ def seed_shots():
             db.session.commit()
             db.session.flush()
 
-    with open('/Users/nick/Desktop/app-academy/projects/heat-check/app/seeds/zion_shot_data.txt') as file:
+    with open(f'{base_file_path}/seeds/zion_shot_data.txt') as file:
         data = json.load(file)
         shot_list = data["resultSets"][0]["rowSet"]
         for shot in shot_list:
