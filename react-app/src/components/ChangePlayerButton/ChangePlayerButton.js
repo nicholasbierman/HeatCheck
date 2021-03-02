@@ -16,12 +16,12 @@ export const ChangePlayerButton = ({comparison}) => {
     useEffect(() => {
         dispatch(getPlayerById(selectedPlayer));
         dispatch(getShotsByPlayerId(selectedPlayer));
-    }, [selectedPlayer]);
+    }, [dispatch, selectedPlayer]);
 
     useEffect(() => {
         dispatch(getComparisonPlayerById(comparisonPlayer));
         dispatch(getComparisonShotsByPlayerId(comparisonPlayer));
-    }, [comparisonPlayer])
+    }, [dispatch, comparisonPlayer])
 
     useEffect(() => {
         dispatch(getAllPlayers())
@@ -29,7 +29,7 @@ export const ChangePlayerButton = ({comparison}) => {
     
     return (
         <form onSubmit={(e) => e.preventDefault()}>
-            <select style={{ cursor: "pointer", backgroundColor: "slategray", borderColor: "transparent", cursor: "pointer", borderRadius: "4px" }} onChange={(e) => comparison ? setComparisonPlayer(e.target.value) : setSelectedPlayer(e.target.value)}>
+            <select style={{ backgroundColor: "slategray", borderColor: "transparent", cursor: "pointer", borderRadius: "4px" }} onChange={(e) => comparison ? setComparisonPlayer(e.target.value) : setSelectedPlayer(e.target.value)}>
                 {comparison ? <option selected disabled hidden>Compare to...</option> : <option selected disabled hidden>Change Player...</option>}
                 {allPlayers.map((player, i) => {
                     return <option key={ i } value={player.nba_player_id}>{ player.last_name }, { player.first_name }</option>
