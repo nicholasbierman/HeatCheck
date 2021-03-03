@@ -15,8 +15,8 @@ export const ModalContainer = () => {
         setShowModal(false);
     }
     return (
-        <div style={{maxWidth: "10%"}}>
-            <button onMouseOver={(e) => showModalOnHover(e)}>Modal Container</button>
+        <div style={{maxWidth: "100%"}}>
+            <button onMouseOver={(e) => showModalOnHover(e)}>About Me</button>
             {showModal ? <Modal /> : null}
         </div>
 
