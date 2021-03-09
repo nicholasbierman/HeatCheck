@@ -16,7 +16,7 @@ export const ModalContainer = () => {
   return (
     <div style={{ maxWidth: "100%" }}>
       <button onMouseOver={(e) => showModalOnHover(e)}>
-        <i style={{ fontSize: "20px" }} class="fas fa-id-card"></i>
+        <i style={{ fontSize: "20px" }} className="fas fa-id-card"></i>
       </button>
       {showModal ? <Modal /> : null}
     </div>

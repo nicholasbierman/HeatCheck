@@ -5,6 +5,7 @@ export const Modal = () => {
   return (
     <div
       style={{
+        animation: "slidein 3s",
         position: "fixed",
         display: "flex",
         alignItems: "center",
@@ -33,7 +34,13 @@ export const Modal = () => {
           I love using data visualization to dive under the hood of player
           performance.
         </p>
-        <div style={{display: "flex", maxWidth: "90%", maxHeight: "fit-content", justifyContent: "space-around"}}>
+        <div
+          style={{
+            display: "flex",
+            maxWidth: "90%",
+            maxHeight: "fit-content",
+            justifyContent: "space-around",
+          }}>
           <a href="https://github.com/nicholasbierman">
             <i class="devicon-github-original"></i>
           </a>
