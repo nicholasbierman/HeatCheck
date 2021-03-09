@@ -30,7 +30,7 @@ export const ChangePlayerButton = ({comparison}) => {
     return (
         <form onSubmit={(e) => e.preventDefault()}>
             <select style={{ backgroundColor: "slategray", borderColor: "transparent", cursor: "pointer", borderRadius: "4px" }} onChange={(e) => comparison ? setComparisonPlayer(e.target.value) : setSelectedPlayer(e.target.value)}>
-                {comparison ? <option selected disabled hidden>Compare to...</option> : <option selected disabled hidden>Change Player...</option>}
+                {comparison ? <option defaultValue={selectedPlayer} hidden>Compare to...</option> : <option defaultValue={comparisonPlayer} hidden>Change Player...</option>}
                 {allPlayers.map((player, i) => {
                     return <option key={ i } value={player.nba_player_id}>{ player.last_name }, { player.first_name }</option>
                 })}
