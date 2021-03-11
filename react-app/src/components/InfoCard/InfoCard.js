@@ -1,7 +1,7 @@
 import React from "react";
 import profile_picture from "./github_profile_picture.jpg";
 
-export const Modal = () => {
+export const InfoCard = () => {
   return (
     <div
       style={{

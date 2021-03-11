@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal } from "../InfoCard/InfoCard";
+import { InfoCard } from "../InfoCard/InfoCard";
 
 export const ModalContainer = () => {
   const [showModal, setShowModal] = useState(false);
@@ -18,7 +18,7 @@ export const ModalContainer = () => {
       <button onMouseOver={(e) => showModalOnHover(e)}>
         <i style={{ fontSize: "20px" }} className="fas fa-id-card"></i>
       </button>
-      {showModal ? <Modal /> : null}
+      {showModal ? <InfoCard /> : null}
     </div>
   );
 };
