@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal } from "../Modal/Modal";
+import { Modal } from "../InfoCard/InfoCard";
 
 export const ModalContainer = () => {
   const [showModal, setShowModal] = useState(false);
