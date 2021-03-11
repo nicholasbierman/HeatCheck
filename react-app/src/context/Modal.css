@@ -19,6 +19,7 @@
 }
 
 #modal-content {
+visibility: hidden;
   position: absolute;
   background-color:white;
   border-radius: 10%;

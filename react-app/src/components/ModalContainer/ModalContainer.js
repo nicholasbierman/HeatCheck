@@ -19,6 +19,11 @@ export const ModalContainer = () => {
       <button style={{ cursor: "pointer" }} onClick={() => setShowModal(!showModal)}>
         <i style={{ fontSize: "20px" }} className="fas fa-id-card"></i>
       </button>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <InfoCard />
+        </Modal>
+      )}
       {showModal ? <InfoCard /> : null}
     </div>
   );

@@ -7,6 +7,7 @@ export const InfoCard = () => {
       style={{
         animation: "slidein 3s",
         position: "fixed",
+        backgroundColor: "mintcream",
         display: "flex",
         alignItems: "center",
         right: "0",
@@ -21,11 +22,13 @@ export const InfoCard = () => {
           maxWidth: "50%",
           display: "flex",
           flexWrap: "wrap",
-          borderRight: "1px dashed white",
+          margin: "0 20px 0 20px",
+          color: "black",
+          border: "2px dashed black",
         }}>
-        <span>Nick Bierman</span>
+        <span style={{ padding: "0 20px"}}>Nick Bierman</span>
       </div>
-      <div>
+      <div style={{color: "black"}}>
         <p>
           Software Engineer and stathead passionate about the intersection of
           sports & tech.
