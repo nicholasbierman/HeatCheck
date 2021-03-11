@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { InfoCard } from "../InfoCard/InfoCard";
+import { Modal } from '../../context/Modal';
 
 export const ModalContainer = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,7 +16,7 @@ export const ModalContainer = () => {
   };
   return (
     <div style={{ maxWidth: "100%" }}>
-      <button onMouseOver={(e) => showModalOnHover(e)}>
+      <button style={{ cursor: "pointer" }} onClick={() => setShowModal(!showModal)}>
         <i style={{ fontSize: "20px" }} className="fas fa-id-card"></i>
       </button>
       {showModal ? <InfoCard /> : null}
