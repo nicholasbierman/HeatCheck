@@ -43,6 +43,7 @@ export const InfoCard = () => {
             maxWidth: "90%",
             maxHeight: "fit-content",
             justifyContent: "space-around",
+            fontSize: "30px"
           }}>
           <a href="https://github.com/nicholasbierman">
             <i class="devicon-github-original"></i>
