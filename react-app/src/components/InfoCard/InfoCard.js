@@ -28,7 +28,7 @@ export const InfoCard = () => {
         }}>
         <span style={{ padding: "0 20px"}}>Nick Bierman</span>
       </div>
-      <div style={{color: "black"}}>
+      <div style={{color: "black", lineHeight: "1"}}>
         <p>
           Software Engineer and stathead passionate about the intersection of
           sports & tech.
