@@ -56,3 +56,5 @@ export const InfoCard = () => {
     </div>
   );
 };
+
+export default InfoCard;
