@@ -11,8 +11,6 @@ import { Hoop } from '../Hoop/Hoop';
 import { CourtTitle } from '../CourtTitle/courtTitle';
 
 
-
-
 export const Court = () => {
     const shots = useSelector(state => state.shots.shots);
     const dispatch = useDispatch();
@@ -20,30 +18,32 @@ export const Court = () => {
 
 
     useEffect(() => {
-        dispatch(getShotsByPlayerId(201939))
-        dispatch(getLeagueAverages())
-        dispatch(getPlayerById(201939))
-    }, [ dispatch ])
+        dispatch(getShotsByPlayerId(201939));
+        dispatch(getLeagueAverages());
+        dispatch(getPlayerById(201939));
+    }, [ dispatch ]);
     
     return (
         <div style={{ backgroundColor: "black" }}>
             <CourtTitle />
             <svg max-height="fit-content" stroke="gray" fill="none" viewBox="0 0 500 470">
-            <CourtLines />
-            <Hoop />
-            <g stroke="slategray" strokeWidth="0.4px">
-                    { shots && shots.map((shot, i) => {
+                <CourtLines />
+                <Hoop />
+                <g stroke="slategray" strokeWidth="0.4px">
+                    {shots && shots.map((shot, i) => {
                         if (shot.shot_made_flag) {
                             return (
-                                <ShotMark key={ i }x={ shot.x } y={ shot.y } />
-                            )
+                                <ShotMark key={i} x={shot.x} y={shot.y} />
+                            );
                         }
                         return null;
-                })}
+                    })}
                 </g>
-            <Zone />
-            {/* <EfficiencyLegend /> */}
+                <Zone />
+                {/* <EfficiencyLegend /> */}
             </svg>
         </div>
-    )
-}
+    );
+};
+
+export default Court;
