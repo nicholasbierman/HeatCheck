@@ -13,9 +13,9 @@ import { getComparisonPlayerById } from '../../store/comparisonPlayer';
 import { getComparisonShotsByPlayerId } from '../../store/comparisonShots';
 
 
-export const HalfCourt = ({comparison}) => {
+export const HalfCourt = ({ comparison }) => {
     const shots = useSelector(state => state.shots.shots);
-    const comparisonShots = useSelector(state => state.comparisonShots.comparisonShots)
+    const comparisonShots = useSelector(state => state.comparisonShots.comparisonShots);
     const dispatch = useDispatch();
 
 
@@ -25,34 +25,36 @@ export const HalfCourt = ({comparison}) => {
         dispatch(getLeagueAverages());
         dispatch(getPlayerById(201939));
         dispatch(getComparisonPlayerById(201935));
-    }, [ dispatch ])
+    }, [ dispatch ]);
     
     return (
         <div style={{ backgroundColor: "black", width: "50%", display: "inline-block" }}>
-            <ChangePlayerButton comparison={comparison}/>
+            <ChangePlayerButton comparison={comparison} />
             <svg maxWidth="100%" stroke="gray" fill="none" viewBox="0 0 500 470">
-            <CourtLines />
-            <Hoop />
-            <g stroke="slategray" strokeWidth="0.4px">
-                    { !comparison ? shots && shots.map((shot, i) => {
+                <CourtLines />
+                <Hoop />
+                <g stroke="slategray" strokeWidth="0.4px">
+                    {!comparison ? shots && shots.map((shot, i) => {
                         if (shot.shot_made_flag) {
                             return (
-                                <ShotMark comparison={comparison} key={ i }x={ shot.x } y={ shot.y } />
-                                )
-                            }
+                                <ShotMark comparison={comparison} key={i} x={shot.x} y={shot.y} />
+                            );
+                        }
                         return null;
-                        }) : comparisonShots && comparisonShots.map((shot, i) => {
-                            if (shot.shot_made_flag) {
-                                return (
-                                    <ShotMark comparison={comparison} key={i} x={shot.x} y={shot.y} />
-                                )
-                            }
-                            return null;
-                        })}
+                    }) : comparisonShots && comparisonShots.map((shot, i) => {
+                        if (shot.shot_made_flag) {
+                            return (
+                                <ShotMark comparison={comparison} key={i} x={shot.x} y={shot.y} />
+                            );
+                        }
+                        return null;
+                    })}
                 </g>
-            <Zone />
-            <EfficiencyLegend />
+                <Zone />
+                <EfficiencyLegend />
             </svg>
         </div>
-    )
-}
+    );
+};
+
+export default HalfCourt;
