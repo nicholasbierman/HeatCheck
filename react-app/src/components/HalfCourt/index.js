@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { getShotsByPlayerId } from "../../store/shots";
-import ShotMark from '../ShotMark/shotMark'
+import ShotMark from '../ShotMark'
 import { getLeagueAverages } from '../../store/leagueAverages';
 import { getPlayerById } from '../../store/player';
-import { Zone } from '../Zone/Zone';
-import { EfficiencyLegend } from '../EfficiencyLegend/EfficiencyLegend'
-import { CourtLines } from '../CourtLines/CourtLines';
-import { Hoop } from '../Hoop/Hoop';
-import { ChangePlayerButton } from "../ChangePlayerButton/ChangePlayerButton";
+import { Zone } from '../Zone';
+import { EfficiencyLegend } from '../EfficiencyLegend'
+import { CourtLines } from '../CourtLines';
+import { Hoop } from '../Hoop';
+import { ChangePlayerButton } from "../ChangePlayerButton";
 import { getComparisonPlayerById } from '../../store/comparisonPlayer';
 import { getComparisonShotsByPlayerId } from '../../store/comparisonShots';
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InfoCard } from "../InfoCard/InfoCard";
+import { InfoCard } from "../InfoCard";
 import { Modal } from '../../context/Modal';
 
 export const ModalContainer = () => {

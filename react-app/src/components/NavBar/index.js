@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from './heatcheck_logo.png';
-import { ModalContainer } from '../ModalContainer/ModalContainer';
+import { ModalContainer } from '../ModalContainer';
 
 export const NavBar = () => {
   return (

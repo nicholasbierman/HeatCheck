@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { ChangePlayerButton } from '../ChangePlayerButton/ChangePlayerButton';
+import { ChangePlayerButton } from '../ChangePlayerButton';
 
 
 export const CourtTitle = () => {
