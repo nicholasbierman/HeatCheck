@@ -28,3 +28,5 @@ export const ModalContainer = () => {
     </div>
   );
 };
+
+export default ModalContainer;
