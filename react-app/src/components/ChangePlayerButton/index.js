@@ -41,3 +41,4 @@ export const ChangePlayerButton = ({ comparison }) => {
     );
 };
 
+export default ChangePlayerButton;
