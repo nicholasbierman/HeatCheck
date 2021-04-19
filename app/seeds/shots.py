@@ -7,7 +7,8 @@ import json
 def scrape_shots_by_player_id(id):
     response = shotchartdetail.ShotChartDetail(
         team_id=0, player_id=id, season_nullable='2020-21',
-        season_type_all_star='Regular Season', timeout=None
+        season_type_all_star='Regular Season', timeout=None,
+        proxy='127.0.0.1'
     )
     response_json = response.get_json()
     data = json.loads(response_json)
