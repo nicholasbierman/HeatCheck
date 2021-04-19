@@ -1,6 +1,7 @@
 from nba_api.stats.static import players
 from nba_api.stats.endpoints import shotchartdetail
-from ..models import db, Shot
+from .. import app
+from app.models import db, Shot
 import json
 
 
@@ -23,4 +24,4 @@ def scrape_shots_by_player_id(id):
         db.session.flush()
 
 
-scrape_shots_by_player_id(1630173)
+scrape_shots_by_player_id(203500)

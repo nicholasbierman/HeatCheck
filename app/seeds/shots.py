@@ -1,4 +1,4 @@
-from app.models import db, Shot
+from app.models import db, Shot, Player
 from nba_api.stats.static import players
 from nba_api.stats.endpoints import shotchartdetail
 import json
@@ -7,7 +7,7 @@ import json
 def scrape_shots_by_player_id(id):
     response = shotchartdetail.ShotChartDetail(
         team_id=0, player_id=id, season_nullable='2020-21',
-        season_type_all_star='Regular Season'
+        season_type_all_star='Regular Season', timeout=None
     )
     response_json = response.get_json()
     data = json.loads(response_json)
@@ -24,7 +24,9 @@ def scrape_shots_by_player_id(id):
 
 
 def seed_shots():
-    scrape_shots_by_player_id(1630173)
+    # players = Player.query.all()
+    # for player in players:
+    #     scrape_shots_by_player_id(player.nba_player_id)
     with open('app/seeds/curry_shot_data.txt') as file:
         data = json.load(file)
         shot_list = data["resultSets"][0]["rowSet"]
