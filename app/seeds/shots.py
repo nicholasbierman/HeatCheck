@@ -11,28 +11,38 @@ def scrape_shots_by_player_id(id):
         season_type_all_star='Regular Season', timeout=None
     )
     response_json = response.get_json()
-    text_file = open(f"{id}.txt", "w")
-    text_file.write(f"{response_json}")
-    text_file.close()
-    data = json.loads(response_json)
-    shot_list = data["resultSets"][0]["rowSet"]
-    for shot in shot_list:
-        new_shot = Shot(nba_player_id=shot[3],
-                        x=shot[17]+250,
-                        y=shot[18]+60,
-                        shot_zone=f'{shot[13]} - {shot[14]}',
-                        shot_made_flag=shot[20])
-        db.session.add(new_shot)
-        # text_file.write(f"{new_shot}")
-        db.session.commit()
-        db.session.flush()
+    directory = 'app/player_shot_data'
+    file = f"{id}.txt"
+    if os.path.isdir(directory):
+        path = os.path.join(directory, file)
+        text_file = open(f"{path}", "w")
+        text_file.write(f"{response_json}")
+        text_file.close()
+    else:
+        directory = os.mkdir('app/player_shot_data')
+        path = os.path.join(directory, file)
+        text_file = open(f"{directory}/{id}.txt", "w")
+        text_file.write(f"{response_json}")
+        text_file.close()
+    # data = json.loads(response_json)
+    # shot_list = data["resultSets"][0]["rowSet"]
+    # for shot in shot_list:
+    #     new_shot = Shot(nba_player_id=shot[3],
+    #                     x=shot[17]+250,
+    #                     y=shot[18]+60,
+    #                     shot_zone=f'{shot[13]} - {shot[14]}',
+    #                     shot_made_flag=shot[20])
+    #     db.session.add(new_shot)
+    #     # text_file.write(f"{new_shot}")
+    #     db.session.commit()
+    #     db.session.flush()
 
 
 def seed_shots():
     players = Player.query.all()
     for player in players:
-        # scrape_shots_by_player_id(player.nba_player_id)
-        with open(f"{player.nba_player_id}.txt") as file:
+        scrape_shots_by_player_id(player.nba_player_id)
+        with open(f"app/player_shot_data/{player.nba_player_id}.txt") as file:
             data = json.load(file)
             shot_list = data["resultSets"][0]["rowSet"]
             for shot in shot_list:
