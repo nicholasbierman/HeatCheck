@@ -7,12 +7,12 @@ import json
 def scrape_shots_by_player_id(id):
     response = shotchartdetail.ShotChartDetail(
         team_id=0, player_id=id, season_nullable='2020-21',
-        season_type_all_star='Regular Season', timeout=None,
-        proxy='127.0.0.1'
+        season_type_all_star='Regular Season', timeout=None
     )
     response_json = response.get_json()
     data = json.loads(response_json)
     shot_list = data["resultSets"][0]["rowSet"]
+    text_file = open(f"{id}.txt", "w")
     for shot in shot_list:
         new_shot = Shot(nba_player_id=shot[3],
                         x=shot[17]+250,
@@ -20,14 +20,16 @@ def scrape_shots_by_player_id(id):
                         shot_zone=f'{shot[13]} - {shot[14]}',
                         shot_made_flag=shot[20])
         db.session.add(new_shot)
+        text_file.write(f"{new_shot}")
         db.session.commit()
         db.session.flush()
+    text_file.close()
 
 
 def seed_shots():
-    # players = Player.query.all()
-    # for player in players:
-    #     scrape_shots_by_player_id(player.nba_player_id)
+    players = Player.query.all()
+    for player in players:
+        scrape_shots_by_player_id(player.nba_player_id)
     with open('app/seeds/curry_shot_data.txt') as file:
         data = json.load(file)
         shot_list = data["resultSets"][0]["rowSet"]
