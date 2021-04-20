@@ -29,7 +29,8 @@ def scrape_shots_by_player_id(id):
 def seed_shots():
     players = Player.query.all()
     for player in players:
-        scrape_shots_by_player_id(player.nba_player_id)
+        if os.environ.get('FLASK_ENV') == 'development':
+            scrape_shots_by_player_id(player.nba_player_id)
         with open(f"app/player_shot_data/{player.nba_player_id}.txt") as file:
             data = json.load(file)
             shot_list = data["resultSets"][0]["rowSet"]
