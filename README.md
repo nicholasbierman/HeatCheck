@@ -32,5 +32,8 @@ npm install
 ```
 3. Install Python dependencies using ```pip```
 ```sh
-pip install
+pip install -r requirements.txt
+```
+```sh
+pip install -r dev-requirements.txt
 ```
