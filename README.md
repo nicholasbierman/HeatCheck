@@ -37,3 +37,10 @@ pip install -r requirements.txt
 ```sh
 pip install -r dev-requirements.txt
 ```
+4. ```cd``` into the ```app``` directory and start the backend server
+```sh
+pipenv shell
+```
+```sh
+flask run
+```
