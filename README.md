@@ -44,3 +44,7 @@ pipenv shell
 ```sh
 flask run
 ```
+5. ```cd``` into the ```react-app``` directory and start the frontend server
+```sh
+npm start
+```
