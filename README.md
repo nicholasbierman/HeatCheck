@@ -48,3 +48,4 @@ flask run
 ```sh
 npm start
 ```
+6. Check out the shot map for your favorite NBA player!
