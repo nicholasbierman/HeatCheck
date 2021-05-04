@@ -30,3 +30,7 @@ git clone https://github.com/nicholasbierman/HeatCheck.git
 ```sh
 npm install
 ```
+3. Install Python dependencies using ```pip```
+```sh
+pip install
+```
