@@ -26,3 +26,7 @@
 ```sh
 git clone https://github.com/nicholasbierman/HeatCheck.git
 ```
+2. Install JavaScript dependencies using ```npm```
+```sh
+npm install
+```
