@@ -18,5 +18,34 @@
 ### Deployment and Package Management
 <a href="https://docker.com/"><img alt="Docker" src="https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=Docker&logoColor=white" /></a>
 <a href="#"><img alt="git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" /></a>
-<a href="https://www.npmjs.com/"><img alt="npm" src="https://img.shields.io/badge/-NPM-CB3837?style=flat-square&logo=npm&logoColor=white" /></a>
+<a href="https://www.npmjs.com/"><img alt="npm" src="https://img.shields.io/badge/-npm-CB3837?style=flat-square&logo=npm&logoColor=white" /></a>
 <a href="https://heroku.com/"><img alt="Heroku" src="https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=Heroku&logoColor=white" /></a>
+
+### Getting Started
+1. Clone the repo
+```sh
+git clone https://github.com/nicholasbierman/HeatCheck.git
+```
+2. Install JavaScript dependencies using ```npm```
+```sh
+npm install
+```
+3. Install Python dependencies using ```pip```
+```sh
+pip install -r requirements.txt
+```
+```sh
+pip install -r dev-requirements.txt
+```
+4. ```cd``` into the ```app``` directory and start the backend server
+```sh
+pipenv shell
+```
+```sh
+flask run
+```
+5. ```cd``` into the ```react-app``` directory and start the frontend server
+```sh
+npm start
+```
+6. Check out the shot map for your favorite NBA player!
